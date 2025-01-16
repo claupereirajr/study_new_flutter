@@ -36,4 +36,4 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
->>>>>>> d9a8751 (last update of class)
+

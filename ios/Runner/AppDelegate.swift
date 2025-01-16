@@ -26,4 +26,4 @@ import UIKit
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
->>>>>>> d9a8751 (last update of class)
+

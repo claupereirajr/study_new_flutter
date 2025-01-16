@@ -24,4 +24,4 @@ class RunnerTests: XCTestCase {
   }
 
 }
->>>>>>> d9a8751 (last update of class)
+
