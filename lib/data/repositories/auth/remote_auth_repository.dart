@@ -52,7 +52,6 @@ class RemoteAuthRepository implements AuthRepository {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _streamController.close();
   }
 }

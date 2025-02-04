@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:result_command/result_command.dart';
-import 'package:routefly/routefly.dart';
 import 'package:study_new_flutter/config/dependencies.dart';
 import 'package:study_new_flutter/domain/dtos/credentials.dart';
 import 'package:study_new_flutter/domain/validators/credentials_validator.dart';
-import 'package:study_new_flutter/main.dart';
-import 'package:study_new_flutter/ui/auth/controller/login_controller.dart';
+import 'package:study_new_flutter/ui/auth/login/controller/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,9 +24,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _listenable() {
-    if (loginController.loginCommand.isSuccess) {
-      Routefly.navigate(routePaths.home);
-    } else if (loginController.loginCommand.isFailure) {
+    if (loginController.loginCommand.isFailure) {
       final error = loginController.loginCommand.value as FailureCommand;
       final snackBar = SnackBar(
         content: Text(error.error.toString()),
@@ -48,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
