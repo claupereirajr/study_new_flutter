@@ -24,13 +24,6 @@ class RemoteAuthRepository implements AuthRepository {
   @override
   AsyncResult<LoggedUser> login(Credentials credentials) async {
     final validator = CredentialsValidator();
-    // if (!validator.validate(credentials).isValid) {
-    //   return Failure(Exception('Invalid credentials'));
-    // }
-    // return _authClientHttp
-    //     .login(credentials)
-    //     .flatMap(_authLocalStorage.saveUser)
-    //     .onSuccess(_streamController.add);
     return validator
         .validateResult(credentials)
         .flatMap(_authClientHttp.login)
